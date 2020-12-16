@@ -22,7 +22,7 @@ public class RestApiControllerTest {
 
 	@Test
 	public void getIndexTest() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/api").accept(MediaType.APPLICATION_JSON))
+		mvc.perform(MockMvcRequestBuilders.get("/api/").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(equalTo("Default API response")));
 	}

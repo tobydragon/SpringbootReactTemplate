@@ -26,7 +26,7 @@ public class RestApiControllerIT {
 
     @BeforeEach
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/api");
+        this.base = new URL("http://localhost:" + port + "/api/");
     }
 
     @Test
