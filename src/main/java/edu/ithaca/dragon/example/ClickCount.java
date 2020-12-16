@@ -6,10 +6,14 @@ public class ClickCount {
     public ClickCount(){
         clickCount=5;
     }
+
+    public void incrementClickCount(){
+        clickCount++;
+    }
+
     public int getClickCount() {
         return clickCount;
     }
-
     public void setClickCount(int clickCount) {
         this.clickCount = clickCount;
     }

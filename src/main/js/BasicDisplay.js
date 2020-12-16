@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getFromServer} from "./Comm";
+import {getFromServer, postToServer} from "./Comm";
 
 function BasicTextComponent(){
     return "Basic Text displayed on screen"
@@ -34,7 +34,16 @@ function ServerClickCounter(){
         <div>
             <h3>Server Click Counter</h3>
             The server says have clicked the button {clickCount} times.<br/>
-            <button onClick={() => setClickCount(clickCount + 1)}>increment</button>
+            <button onClick={() =>
+                postToServer(
+                    "api/",
+                    "incrementClickCount",
+                    null,
+                    (resp)=>setClickCount(resp.clickCount)
+                )
+            }>
+                increment
+            </button>
         </div>
     );
 }
